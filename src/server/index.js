@@ -7,8 +7,15 @@ var app = express();
 const port = 3000;
 
 //Uso metodo USE en vez de GET porque funciona para todo
-app.use('/', function (req, res) {
-  res.send('Express');
+app.use('/api', function (req, res) {
+  //Probando emojisense
+  var welcome = ('Bienvenido a EXPRESS 🖖')
+
+  //Tirando fruta
+  const Frutas = [ '🥝', '🍎', '🍊 ', welcome];
+  
+    res.json(Frutas);
+    
 });
 
 app.listen(3000, function () {
