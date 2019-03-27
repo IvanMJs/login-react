@@ -10,15 +10,15 @@
     "react-dom": "^16.8.5",
     "react-router": "^5.0.0",
     "react-scripts": "2.1.8",
-    "reactstrap": "^7.1.0"
+    "reactstrap": "^7.1.0",
+    "superagent": "^4.1.0"
   },
   "scripts": {
-    "start": "nodemon src/server",  
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -35,6 +35,8 @@
     "type": "git",
     "url": "git+https://github.com/ivanmeyer91/login-react.git"
   },
+  "proxy": "http://localhost:3000",
+
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -43,5 +45,3 @@
   }
   
 }
-
-
