@@ -4,7 +4,7 @@
 var express = require("express");
 var app = express();
 //Declaro el puerto a usar
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 //Uso metodo USE en vez de GET porque funciona para todo
 app.use(express.static('/api/frutas'));
@@ -28,6 +28,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("La app esta pegando en el puerto " + port);
 });

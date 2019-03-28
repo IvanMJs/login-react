@@ -15,9 +15,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "nodemon ./src/server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "concurrently --kill-others \"npm run start\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,18 +32,18 @@
   ],
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ivanmeyer91/login-react.git"
   },
-  "proxy": "http://localhost:3000",
-
+  "proxy": "http://localhost:3001",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ivanmeyer91/login-react/issues"
   }
-  
 }

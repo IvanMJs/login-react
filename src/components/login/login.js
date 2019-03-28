@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './login.css';
-//import request  from 'superagent';
 
 class Login extends Component {
   
@@ -12,27 +11,15 @@ constructor(props) {
 }
 
   connecToServer() {
-    fetch('/api/frutas');
+    fetch('/api/frutas')
+    .then(res => res.json())
+    .then(data => console.log(data));
   }
-//state = { frutas: [] };
+
 
 componentDidMount() {
   this.connecToServer();
 }
-
- // componentDidMount(){
- //   this.getFrutas();
- // }
-
-// getFrutas = () =>{
-//   fetch('/api/frutas')
-//   .then(res => res.text())
-//   .then(text => console.log(text));
-//   //.then(frutas => this.setState({ frutas }))
-// }
-
-
-
 
   render() {
     //console.log(this.state.frutas);
