@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import InputNombre from "../input/inputNombre";
+import InputCorreo from "../input/inputCorreo";
+import InputApellido from "../input/inputApellido";
+import InputContra from "../input/inputContraseña";
+import SubIngreso from "../submit/submitIngreso";
 import "./login.css";
 
 class Login extends Component {
@@ -25,54 +30,11 @@ class Login extends Component {
         <div className="form-wrapper">
           <h1>Crear cuenta</h1>
           <form onSubmit={this.handleSubmit} noValidate>
-            <div class="firstName">
-              <label htmlFor="firstName">Nombre</label>
-              <input
-                type="text"
-                className=""
-                placeholder="Nombre"
-                name="firstname"
-                noValidate
-                onChange={this.handleChange}
-              />
-            </div>
-            <div class="lastName">
-              <label htmlFor="lastName">Apellido</label>
-              <input
-                type="text"
-                className=""
-                placeholder="Apellido"
-                name="lastName"
-                noValidate
-                onChange={this.handleChange}
-              />
-            </div>
-            <div class="email">
-              <label htmlFor="email">Correo</label>
-              <input
-                type="email"
-                className=""
-                placeholder="Correo"
-                name="email"
-                noValidate
-                onChange={this.handleChange}
-              />
-            </div>
-            <div class="password">
-              <label htmlFor="password">Contraseña</label>
-              <input
-                type="text"
-                className=""
-                placeholder="Contraseña"
-                name="password"
-                noValidate
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="createAccount">
-              <button type="submit">Ingresar</button>
-              <small>Ya tienes cuenta?</small>
-            </div>
+            <InputNombre />
+            <InputApellido />
+            <InputCorreo />
+            <InputContra />
+            <SubIngreso />
           </form>
         </div>
       </div>
