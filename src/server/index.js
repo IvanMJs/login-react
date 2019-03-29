@@ -14,8 +14,6 @@ var welcome = "Bienvenido a EXPRESS 🖖";
 //Tirando fruta
 const frutas = ["🥝", "🍎", "🍊 ", welcome];
 
-//res.json(Frutas);
-
 app.get("/api/frutas", (req, res) => {
   res.json({
     frutas: frutas

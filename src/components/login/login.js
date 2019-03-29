@@ -1,43 +1,80 @@
-import React, { Component } from 'react';
-import './login.css';
+import React, { Component } from "react";
+import "./login.css";
 
 class Login extends Component {
-  
-//inicializo state
-constructor(props) {
-  super(props);
-  this.state = {}
-  this.connecToServer = this.connecToServer.bind(this)
-}
-
-  connecToServer() {
-    fetch('/api/frutas')
-    .then(res => res.json())
-    .then(data => console.log(data));
+  //inicializo state
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.connecToServer = this.connecToServer.bind(this);
   }
 
+  connecToServer() {
+    fetch("/api/frutas")
+      .then(res => res.json())
+      .then(data => console.log(data));
+  }
 
-componentDidMount() {
-  this.connecToServer();
-}
+  componentDidMount() {
+    this.connecToServer();
+  }
 
   render() {
-    //console.log(this.state.frutas);
     return (
-      <div className="App">
-        <header className="App-header">
-          
-          <h1>
-            Desde login.js
-          </h1>
-          <p>Para ir desde express cambie start:"nodemon src/server" desde el
-            Package.json e ir http://localhost:3000/api/frutas <br/>
-            Falta conectar el login con express que esta en la carpeta
-            server/index.js
-             
-          </p>
-          
-        </header>
+      <div className="wrapper">
+        <div className="form-wrapper">
+          <h1>Crear cuenta</h1>
+          <form onSubmit={this.handleSubmit} noValidate>
+            <div class="firstName">
+              <label htmlFor="firstName">Nombre</label>
+              <input
+                type="text"
+                className=""
+                placeholder="Nombre"
+                name="firstname"
+                noValidate
+                onChange={this.handleChange}
+              />
+            </div>
+            <div class="lastName">
+              <label htmlFor="lastName">Apellido</label>
+              <input
+                type="text"
+                className=""
+                placeholder="Apellido"
+                name="lastName"
+                noValidate
+                onChange={this.handleChange}
+              />
+            </div>
+            <div class="email">
+              <label htmlFor="email">Correo</label>
+              <input
+                type="email"
+                className=""
+                placeholder="Correo"
+                name="email"
+                noValidate
+                onChange={this.handleChange}
+              />
+            </div>
+            <div class="password">
+              <label htmlFor="password">Contraseña</label>
+              <input
+                type="text"
+                className=""
+                placeholder="Contraseña"
+                name="password"
+                noValidate
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="createAccount">
+              <button type="submit">Ingresar</button>
+              <small>Ya tienes cuenta?</small>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
