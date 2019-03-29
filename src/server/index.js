@@ -10,6 +10,11 @@ const port = process.env.PORT || 3001;
 app.use(express.static('/api/frutas'));
 //Probando emojisense
 var welcome = "Bienvenido a EXPRESS 🖖";
+var cars = [
+  "Saab🚗",
+  "Volvo 🚙",
+  "BMW 🚓"
+];
 
 //Tirando fruta
 const frutas = ["🥝", "🍎", "🍊 ", welcome];
@@ -22,7 +27,7 @@ app.get("/api/frutas", (req, res) => {
 
 app.get("/", (req, res) => {
   res.json({
-    frutas: frutas
+    cars: cars
   });
 });
 
